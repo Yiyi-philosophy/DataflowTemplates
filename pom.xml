@@ -129,12 +129,7 @@
         <artifactId>log4j-core</artifactId>
         <version>${log4j-2.version}</version>
       </dependency>
-      <!--  Checkstyle v9.2      -->
-      <dependency>
-          <groupId>com.puppycrawl.tools</groupId>
-          <artifactId>checkstyle</artifactId>
-          <version>9.2</version>
-      </dependency>
+
     </dependencies>
   </dependencyManagement>
 
@@ -213,12 +208,14 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-checkstyle-plugin</artifactId>
-        <version>${maven-checkstyle-plugin.version}</version>
+<!--         <version>${maven-checkstyle-plugin.version}</version> -->
+        <version>3.1.2</version>
         <dependencies>
           <dependency>
             <groupId>com.puppycrawl.tools</groupId>
             <artifactId>checkstyle</artifactId>
-            <version>${checkstyle.version}</version>
+<!--             <version>${checkstyle.version}</version> -->
+            <version>9.2</version>
           </dependency>
         </dependencies>
         <configuration>
