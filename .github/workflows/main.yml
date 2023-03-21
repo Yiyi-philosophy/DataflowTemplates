@@ -29,5 +29,5 @@ jobs:
           java-version: '8'
           distribution: 'temurin'
       - name: Test
-        run: mvn -e -pl . edu.illinois:nondex-maven-plugin:1.1.2:nondex -Dtest=com.google.cloud.teleport.templates.BulkDecompressorTest#testDecompressUnknownCompressionFile
+        run: mvn -X -pl . edu.illinois:nondex-maven-plugin:1.1.2:nondex -Dtest=com.google.cloud.teleport.templates.BulkDecompressorTest#testDecompressUnknownCompressionFile
         
