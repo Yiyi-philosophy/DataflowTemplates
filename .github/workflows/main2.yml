@@ -28,4 +28,4 @@ jobs:
           java-version: '8'
           distribution: 'temurin'
       - name: Test
-        run: mvn -pl . edu.illinois:nondex-maven-plugin:1.1.2:nondex -Dtest=com.google.cloud.teleport.splunk.HttpEventPublisherTest#stringPayloadTest
+        run: mvn -X -pl . edu.illinois:nondex-maven-plugin:1.1.2:nondex -Dtest=com.google.cloud.teleport.splunk.HttpEventPublisherTest#stringPayloadTest
