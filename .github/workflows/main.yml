@@ -1,0 +1,33 @@
+# https://github.com/GoogleCloudPlatform/DataflowTemplates,
+# 5094c7b39de511c9ed441d9fde28553a88f68e4b,.,
+# com.google.cloud.teleport.templates.BulkDecompressorTest.testDecompressUnknownCompressionFile
+# ,ID,,,
+
+name: Test:BulkDecompressorTest.testDecompressUnknownCompressionFile
+run-name: Known Flaky test
+on: [push]
+jobs:
+  Test_Without_Nondex_Shuffling:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up JDK 8
+        uses: actions/setup-java@v3
+        with:
+          java-version: '8'
+          distribution: 'temurin'
+      - name: Test
+        run: mvn -pl . test -Dtest=com.google.cloud.teleport.templates.BulkDecompressorTest#testDecompressUnknownCompressionFile
+        
+  Test_With_Nondex_Shuffling:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up JDK 8
+        uses: actions/setup-java@v3
+        with:
+          java-version: '8'
+          distribution: 'temurin'
+      - name: Test
+        run: mvn -pl . edu.illinois:nondex-maven-plugin:1.1.2:nondex -Dtest=com.google.cloud.teleport.templates.BulkDecompressorTest#testDecompressUnknownCompressionFile
+        
